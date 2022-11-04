@@ -20,7 +20,7 @@ function Dashboard() {
 
   useEffect(() => {
     axios
-      .get("https://run.mocky.io/v3/63d37c95-f740-4bc1-acaa-20a0a6b884cb")
+      .get("https://run.mocky.io/v3/2d1a5699-00f1-4e76-99f6-9982ef0383b4")
       .then((response) => {
         setCollection(response.data.nft.collection);
         console.log(response.data.nft);
@@ -30,7 +30,7 @@ function Dashboard() {
   return (
     <div>
       <NavApp />
-      <div style={{ width: "100%", backgroundColor: "lightgrey" }}>
+      <div style={{ width: "100%", backgroundColor: "lightblue" }}>
         <Box
           sx={{
             flexGrow: 2,
@@ -50,8 +50,10 @@ function Dashboard() {
                   width="150px"
                   className="img-avatar-NFT"
                 />
-                <h2>ShitPunks</h2>
-                <h3>Volume(BNB): 1.843,630</h3>
+                <div className="info-headerNFT">
+                  <h2>ShitPunks</h2>
+                  <h3>Volume(BNB): 1.843,630</h3>
+                </div>
               </Item>
             </Grid>
             <Grid item xs={6}>
@@ -71,12 +73,30 @@ function Dashboard() {
           </Grid>
         </Box>
       </div>
-      <div className="container-Dashcard">
-        {collection &&
-          collection.map((item, index) => (
-            <DashCard key={index} props={item} />
-          ))}
-      </div>
+      <Box
+        sx={{
+          flexGrow: 2,
+          display: "grid",
+          paddingTop: "2rem",
+          paddingBottom: "2rem",
+        }}
+      >
+        <Grid
+          sx={{
+            justifyContent: "center",
+            width: "100%",
+            display: "flex",
+            flexWrap: "wrap",
+            padding: "1rem",
+            gap: "2rem",
+          }}
+        >
+          {collection &&
+            collection.map((item, index) => (
+              <DashCard key={index} props={item} />
+            ))}
+        </Grid>
+      </Box>
     </div>
   );
 }
