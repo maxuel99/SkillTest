@@ -4,7 +4,11 @@ import { Card } from "@mui/material";
 // eslint-disable-next-line
 function DashCard({ props }: any) {
   return (
-    <Card variant="outlined" className="container-dashCard">
+    <Card
+      variant="outlined"
+      className="container-dashCard"
+      sx={{ borderRadius: "1rem" }}
+    >
       <img src={props.image_url} alt={props.name} className="img-DashCard" />
       <div className="info-Card">
         <h3>{props.name}</h3>
