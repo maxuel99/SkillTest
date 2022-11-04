@@ -3,8 +3,15 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 const options = ["Dashboard", "Table"];
+
+if (options[0] === "Dashboard") {
+  <Link to="/dashboard" />;
+} else if (options[1] === "Table") {
+  <Link to="/table" />;
+}
 
 const ITEM_HEIGHT = 48;
 
@@ -55,7 +62,21 @@ function LongMenu() {
             selected={option === "Pyxis"}
             onClick={handleClose}
           >
-            {option}
+            {option === "Table" ? (
+              <Link
+                to="/table"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                {option}
+              </Link>
+            ) : (
+              <Link
+                to="/dashboard"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                {option}
+              </Link>
+            )}
           </MenuItem>
         ))}
       </Menu>

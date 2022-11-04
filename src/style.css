@@ -34,12 +34,22 @@
   bottom: 8rem;
 }
 
+.info-headerNFT {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
 .img-avatar-NFT {
   border-radius: 50%;
+  width: 40%;
 }
 
 .img-banner {
-  width: 600px;
+  width: 90%;
   height: 203.43px;
   border-radius: 0.5rem;
 }
