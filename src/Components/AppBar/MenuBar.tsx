@@ -4,7 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const options = ["Table"];
+const options = ["Dashboard", "Table"];
 
 const ITEM_HEIGHT = 48;
 
