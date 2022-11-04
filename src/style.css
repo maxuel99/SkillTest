@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Roboto:ital@1&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -31,4 +32,58 @@
   position: absolute;
   right: 2rem;
   bottom: 8rem;
+}
+
+.img-avatar-NFT {
+  border-radius: 50%;
+}
+
+.img-banner {
+  width: 600px;
+  height: 203.43px;
+  border-radius: 0.5rem;
+}
+
+.container-Dashcard {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin: 6rem 0;
+}
+
+.container-dashCard {
+  width: 250px;
+  height: 330px;
+}
+
+.container-dashCard:hover {
+  opacity: 50%;
+}
+
+.img-DashCard {
+  width: 250px;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.info-Card {
+  padding: 0.5rem;
+}
+
+.info-Card h3,
+p {
+  margin-bottom: 0.2rem;
+  font-family: "Kanit", sans-serif;
+}
+
+.info-Card p {
+  position: relative;
+}
+
+.svg-token {
+  position: absolute;
+  left: 80px;
+  bottom: 3px;
 }/*# sourceMappingURL=style.css.map */
