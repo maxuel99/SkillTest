@@ -7,12 +7,6 @@ import { Link } from "react-router-dom";
 
 const options = ["Dashboard", "Table"];
 
-if (options[0] === "Dashboard") {
-  <Link to="/dashboard" />;
-} else if (options[1] === "Table") {
-  <Link to="/table" />;
-}
-
 const ITEM_HEIGHT = 48;
 
 function LongMenu() {
@@ -52,27 +46,35 @@ function LongMenu() {
         PaperProps={{
           style: {
             maxHeight: ITEM_HEIGHT * 4.5,
-            width: "20ch",
+            width: "15ch",
           },
         }}
       >
         {options.map((option) => (
           <MenuItem
             key={option}
-            selected={option === "Pyxis"}
+            // selected={option === "Pyxis"}
             onClick={handleClose}
           >
             {option === "Table" ? (
               <Link
                 to="/table"
-                style={{ textDecoration: "none", color: "black" }}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  textAlign: "center",
+                }}
               >
                 {option}
               </Link>
             ) : (
               <Link
                 to="/dashboard"
-                style={{ textDecoration: "none", color: "black" }}
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  textAlign: "center",
+                }}
               >
                 {option}
               </Link>

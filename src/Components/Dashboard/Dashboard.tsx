@@ -39,8 +39,15 @@ function Dashboard() {
             paddingBottom: "2rem",
           }}
         >
-          <Grid container spacing={3} sx={{ justifyContent: "center" }}>
-            <Grid item xs={4}>
+          <Grid
+            container
+            spacing={3}
+            sx={{
+              justifyContent: "center",
+            }}
+            className="css-8wqzlf-MuiGrid-root"
+          >
+            <Grid item xs={4} sx={{ maxWidth: "50%" }}>
               <Item>
                 <img
                   src={
@@ -56,7 +63,7 @@ function Dashboard() {
                 </div>
               </Item>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={6} sx={{ maxWidth: "90%" }}>
               <Item>
                 <img
                   className="img-banner"
