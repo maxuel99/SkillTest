@@ -14,7 +14,7 @@
 
 .img-banner {
   width: 90%;
-  height: 203.43px;
+  // height: 203.43px;
   border-radius: 0.5rem;
 }
 
@@ -25,4 +25,12 @@
   flex-wrap: wrap;
   gap: 5rem;
   margin: 6rem 0;
+}
+
+@media screen and (min-width: 360px) and (max-width: 851px) {
+  .css-8wqzlf-MuiGrid-root {
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+    align-items: center;
+  }
 }

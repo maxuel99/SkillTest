@@ -10,7 +10,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -48,58 +47,56 @@ function TableApp() {
   return (
     <div>
       <NavApp />
-      <Box sx={{ overflow: "auto" }}>
-        <Box sx={{ width: "100%", display: "table", tableLayout: "fixed" }}>
-          <TableContainer sx={{ padding: "2rem" }} component={Paper}>
-            <Table aria-label="customized table">
-              <TableHead>
-                <StyledTableRow>
-                  <StyledTableCell>ID</StyledTableCell>
-                  <StyledTableCell align="right">Description</StyledTableCell>
-                  <StyledTableCell align="right">Volume</StyledTableCell>
-                  <StyledTableCell align="right">Current Price</StyledTableCell>
-                  <StyledTableCell align="right">High 24</StyledTableCell>
-                  <StyledTableCell align="right">Low 24</StyledTableCell>
+      <div style={{ padding: "24px" }}>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+            <TableHead>
+              <StyledTableRow>
+                <StyledTableCell>ID</StyledTableCell>
+                <StyledTableCell align="right">Description</StyledTableCell>
+                <StyledTableCell align="right">Volume</StyledTableCell>
+                <StyledTableCell align="right">Current Price</StyledTableCell>
+                <StyledTableCell align="right">High 24</StyledTableCell>
+                <StyledTableCell align="right">Low 24</StyledTableCell>
+              </StyledTableRow>
+            </TableHead>
+            <TableBody>
+              {token.map((item, index) => (
+                <StyledTableRow
+                  key={index}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <StyledTableCell component="th" scope="row">
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                      }}
+                    >
+                      {item.id}
+                      <img src={item.image} alt={item.name} width="25px" />
+                    </div>
+                  </StyledTableCell>
+                  <StyledTableCell align="right">{item.name}</StyledTableCell>
+                  <StyledTableCell align="right">
+                    {item.total_volume}
+                  </StyledTableCell>
+                  <StyledTableCell align="right">
+                    {item.current_price}
+                  </StyledTableCell>
+                  <StyledTableCell align="right">
+                    {item.high_24h}
+                  </StyledTableCell>
+                  <StyledTableCell align="right">
+                    {item.low_24h}
+                  </StyledTableCell>
                 </StyledTableRow>
-              </TableHead>
-              <TableBody>
-                {token.map((item, index) => (
-                  <StyledTableRow
-                    key={index}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  >
-                    <StyledTableCell component="th" scope="row">
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "1rem",
-                        }}
-                      >
-                        {item.id}
-                        <img src={item.image} alt={item.name} width="25px" />
-                      </div>
-                    </StyledTableCell>
-                    <StyledTableCell align="right">{item.name}</StyledTableCell>
-                    <StyledTableCell align="right">
-                      {item.total_volume}
-                    </StyledTableCell>
-                    <StyledTableCell align="right">
-                      {item.current_price}
-                    </StyledTableCell>
-                    <StyledTableCell align="right">
-                      {item.high_24h}
-                    </StyledTableCell>
-                    <StyledTableCell align="right">
-                      {item.low_24h}
-                    </StyledTableCell>
-                  </StyledTableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Box>
-      </Box>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
     </div>
   );
 }
