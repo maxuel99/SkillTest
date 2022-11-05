@@ -1,0 +1,36 @@
+.info-headerNFT {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.img-avatar-NFT {
+  border-radius: 50%;
+  width: 40%;
+}
+
+.img-banner {
+  width: 90%;
+  // height: 203.43px;
+  border-radius: 0.5rem;
+}
+
+.container-Dashcard {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin: 6rem 0;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .css-8wqzlf-MuiGrid-root {
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+    align-items: center;
+  }
+}
